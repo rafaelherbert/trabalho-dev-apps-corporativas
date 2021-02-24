@@ -76,12 +76,11 @@ public class HelloServlet extends HttpServlet {
                 break;
         }
         
-        String nome = request.getParameter("nome");
-
-        if(nome==null)
-            nome = "Fulano";
+        String nome = request.getParameter("nome") == null ? "Fulano" : request.getParameter("nome");
+        String job = request.getParameter("job") == null ? "Analista de Sistemas" : request.getParameter("job");
+        String birthday = request.getParameter("birthday") == null ? "16 de abril" : request.getParameter("birthday");
         
-        msg = msg+nome+"!";
+        msg = msg + nome + "! Suspeito de que voce seja um " + job + " e faça aniversário no dia " + birthday + ". É só um chute!";
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -130,12 +129,11 @@ public class HelloServlet extends HttpServlet {
                 break;
         }
         
-        String nome = request.getParameter("nome");
-
-        if(nome==null)
-            nome = "Fulano";
+        String nome = request.getParameter("nome") == null ? "Fulano" : request.getParameter("nome");
+        String job = request.getParameter("job") == null ? "Analista de Sistemas" : request.getParameter("job");
+        String birthday = request.getParameter("birthday") == null ? "16 de abril" : request.getParameter("birthday");
         
-        msg = msg+nome+"!";
+        msg = msg + nome + "! Suspeito de que voce seja um " + job + " e faça aniversário no dia " + birthday + ". É só um chute!";
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
